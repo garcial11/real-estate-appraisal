@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Appraisal Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Multifamily Property Appraisal (Monthly Inputs)</h1>
+        <form id="appraisalForm">
+            <label for="income">Monthly Income (Total Rent):</label>
+            <input type="number" id="income" name="income" placeholder="Enter Monthly Income" required>
+
+            <label for="expenses">Monthly Operating Expenses:</label>
+            <input type="number" id="expenses" name="expenses" placeholder="Enter Monthly Expenses" required>
+
+            <label for="capRate">Capitalization Rate (Annual %):</label>
+            <input type="number" id="capRate" name="capRate" placeholder="Enter Annual Cap Rate" required>
+
+            <label for="grm">Gross Rent Multiplier (Annual):</label>
+            <input type="number" id="grm" name="grm" placeholder="Enter Annual GRM" required>
+
+            <button type="button" onclick="calculateAppraisal()">Calculate Appraisal</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
