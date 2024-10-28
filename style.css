@@ -1,57 +1,98 @@
 /* General styles for the entire page */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f5f6fa;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-/* Container styling */
+/* Container styling for a widget-like look */
 .container {
-    max-width: 100%; /* Adjust to full width on smaller screens */
-    width: 90%; /* Set width to 90% of the viewport for better spacing */
-    margin: 20px auto; /* Add some margin */
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Heading styling */
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 1.5em; /* Adjust font size for better visibility on small screens */
+    font-size: 1.8em;
+    color: #333333;
 }
 
-/* Form and input field styling */
+/* Form styling */
 form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
+/* Label styling, includes inline display for value next to slider */
 label {
-    margin-bottom: 5px;
     font-weight: bold;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-input {
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 1em; /* Make input fields responsive */
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Slider styling */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+/* Slider thumb styling */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #007BFF;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #007BFF;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
 }
 
 /* Button styling */
 button {
     padding: 12px;
     background-color: #007BFF;
-    color: white;
+    color: #ffffff;
     border: none;
     cursor: pointer;
-    font-size: 1.1em; /* Slightly increase the font size for easier tapping */
-    border-radius: 4px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -64,33 +105,29 @@ button:hover {
     font-size: 1.2em;
     font-weight: bold;
     text-align: center;
+    color: #333333;
 }
 
-/* Media query for screens smaller than 600px (smartphones) */
+/* Media query for mobile responsiveness */
 @media screen and (max-width: 600px) {
-    /* Adjust the container to fit the mobile screen */
     .container {
-        width: 100%; /* Take up the entire screen width */
-        padding: 15px; /* Reduce padding for better use of space */
+        width: 100%;
+        padding: 20px;
     }
 
-    /* Adjust font sizes for smaller screens */
     h1 {
-        font-size: 1.2em; /* Slightly smaller heading font size */
+        font-size: 1.5em;
     }
 
-    input {
-        font-size: 1em; /* Keep the font size readable */
+    label {
+        font-size: 1em;
     }
 
     button {
-        font-size: 1em; /* Adjust button font size */
-        padding: 10px; /* Adjust button padding for mobile screens */
+        font-size: 1em;
     }
 
-    /* Adjust the result font size */
     #result {
-        font-size: 1.1em; /* Slightly smaller for better fit */
+        font-size: 1.1em;
     }
 }
-
